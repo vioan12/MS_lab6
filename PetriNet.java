@@ -31,8 +31,8 @@ public abstract class PetriNet
 
             }
         }
-        for(int i=0;i<listalocatii.size()-1;i++)
-            for(int j=i+1;j<listalocatii.size();j++)
+        for(int i=0;i<listalocatii.size();i++)
+            for(int j=0;j<listalocatii.size();j++)
                 if(listalocatii.get(i).Get_tag().equals(listalocatii.get(j).Get_tag()))
                     listalocatii.remove(j);
         return listalocatii;
