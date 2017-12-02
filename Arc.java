@@ -17,14 +17,6 @@ public class Arc
     {
         return this.locatie;
     }
-    protected int Get_capacitate()
-    {
-        return this.capacitate;
-    }
-    protected String Get_directie()
-    {
-        return this.directie;
-    }
     protected boolean isValid()
     {
         if(directie.equals("out")){
