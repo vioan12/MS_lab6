@@ -24,4 +24,5 @@ public class Locatie
         this.jetoane=valueofjetoane;
     }
 
+
 }
