@@ -25,16 +25,25 @@ public abstract class PetriNet
     protected List<Locatie> starejetoatelocatii()
     {
         List<Locatie> listalocatii = new ArrayList<Locatie>();
+        List<Locatie> listalocatii2 = new ArrayList<Locatie>();
         for(int i=0;i<Tranzitii.size();i++) {
             for (int j = 0; j < Tranzitii.get(i).Get_Arce().size(); j++) {
                 listalocatii.add(Tranzitii.get(i).Get_Arce().get(j).Get_locatie());
 
             }
         }
-        for(int i=0;i<listalocatii.size();i++)
-            for(int j=0;j<listalocatii.size();j++)
-                if(listalocatii.get(i).Get_tag().equals(listalocatii.get(j).Get_tag()))
-                    listalocatii.remove(j);
-        return listalocatii;
+        listalocatii2.add(listalocatii.get(0));
+        for(int i=1;i<listalocatii.size();i++){
+            boolean sw=true;
+            for(int j=0;(j<listalocatii2.size())&&(sw==true);j++){
+                if(listalocatii.get(i).Get_tag().equals(listalocatii2.get(j).Get_tag())==true){
+                    sw=false;
+                }
+            }
+            if(sw==true){
+                listalocatii2.add(listalocatii.get(i));
+            }
+        }
+        return listalocatii2;
     }
 }
