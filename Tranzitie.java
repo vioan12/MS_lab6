@@ -18,6 +18,10 @@ public class Tranzitie
     {
         return this.tag;
     }
+    protected List<Arc> Get_Arce()
+    {
+        return this.Arce;
+    }
     protected boolean isValid()
     {
         boolean sw=true;
